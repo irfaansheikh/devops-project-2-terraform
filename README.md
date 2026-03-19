@@ -1,70 +1,183 @@
-# devops-terraform-infrastructure
 
-Devops Terraform Infrastructure
+# Terraform Infrastructure
+
+# DevOps Infrastructure as Code with Terraform
+
+This project demonstrates how to provision cloud infrastructure using Infrastructure as Code (IaC).
+
+The infrastructure is created on AWS using Terraform and automatically installs a web server on an EC2 instance.
+
+# Setup instructions
+
+    1. create repo
+    2. install terraform
+    3. configure aws
+    4. write provider.tf
+    5. write main.tf
+    6. run terraform init
+    7. run terraform plan
+    8. run terraform apply
+    9. run terraform destroy
+
+# Project Overview
+
+The goal of this project is to automate the provisioning of cloud infrastructure.
+
+Terraform creates:
+
+    • Security group
+    • EC2 instance
+    • Automated Apache installation
+
+The server hosts a simple web page to verify the infrastructure is working.
+
+# Architecture
+
+    User Browser
+        ↓
+    AWS EC2 Instance
+        ↓
+    Apache Web Server
+
+Infrastructure is provisioned using Terraform scripts.
+
+# Project Structure
+
+devops-terraform-infrastructure/ <br>
+├── provider.tf <br>
+├── variables.tf <br>
+├── main.tf <br>
+├── outputs.tf <br>
+└── README.md <br>
 
 
-Architecture diagram
+# Tools Used
+
+Infrastructure as Code
+
+    • Terraform
+
+Cloud Platform
+
+    • Amazon Web Services
+
+Compute Service
+
+    • Amazon EC2
+
+<h3>Infrastructure Created</h3>
+
+Terraform provisions:
+
+    • 1 EC2 Instance
+    • 1 Security Group
+
+Security group rules allow:
+
+    SSH (22)
+    HTTP (80)
+
+# Server Configuration
+
+The EC2 instance automatically installs Apache using a user_data script.
+
+Example configuration:
+
+    #!/bin/bash
+    dnf update -y
+    dnf install -y httpd
+    systemctl start httpd
+    systemctl enable httpd
+    echo "Hello from Terraform DevOps Project" > /var/www/html/index.html
+
+# Deployment Workflow
+
+Initialize Terraform:
+
+    terraform init
+
+Preview infrastructure:
+
+    terraform plan
+
+Create infrastructure:
+
+    terraform apply
+
+Destroy infrastructure:
+
+    terraform destroy
+
+What This Project Demonstrates
+
+    • Infrastructure as Code
+    • Automated cloud provisioning
+    • Server configuration automation
+    • AWS infrastructure management
+
+Future Improvements
+
+    • Add load balancer
+    • Create multiple instances
+    • Integrate Terraform with CI/CD pipeline
 
 
-Setup instructions
+# Screenshots
 
-1. 1️⃣ create repo
-2. install terraform
-3. configure aws
-4. write provider.tf
-5. write main.tf
-6. run terraform init
-7. run terraform plan
-8. run terraform apply
-9. run terraform destroy
+Terraform Initialize
 
+![Terraform Initialize](<./ss/terraform-init.png>)
 
-Screenshots
+Terraform Validate
 
-
-![terraform init]](<Screenshot 2026-03-13 153057.png>)
-
-![terraform validate](<Screenshot 2026-03-13 153121.png>)
+![terraform validate](<./ss/terraform-validate.png>)
 
 1️⃣ terraform plan output
-![alt text](<Screenshot 2026-03-13 153659.png>)
-![alt text](<Screenshot 2026-03-13 153736.png>)
-![alt text](<Screenshot 2026-03-13 154059.png>)
 
-2️⃣ terraform apply success
+![terraform plan1](<./ss/terraform-plan1.png>)
 
+![terraform plan2](<./ss/terraform-plan2.png>)
+
+![terraform plan3](<./ss/terraform-plan3.png>)
+
+2️⃣ Terraform Apply Success
+
+![Terraform Apply](<./ss/terraform-apply.png>)
 
 
 
 3️⃣ EC2 instance running
-![alt text](<Screenshot 2026-03-13 190356.png>)
-![alt text](<Screenshot 2026-03-13 175724.png>)
-![alt text](<Screenshot 2026-03-13 195521.png>)
-![alt text](<Screenshot 2026-03-13 195500.png>)
-![alt text](<Screenshot 2026-03-13 195614.png>)
 
-![alt text](<Screenshot 2026-03-13 163725.png>)
+Resources Dashboard
 
+![Resources Dashboard](<./ss/resources-dashboard.png>)
 
-![alt text](<Screenshot 2026-03-13 191510.png>)
-![alt text](<Screenshot 2026-03-13 195233.png>)
+EC2 Instances
 
-4️⃣ terraform destroy completion
+![EC2 Instance Running](<./ss/ec2-instance-running.png>)
 
-![alt text](<Screenshot 2026-03-13 163428.png>)
-![alt text](<Screenshot 2026-03-13 163449.png>)
-![alt text](<Screenshot 2026-03-13 163511.png>)
+EC2 Instance Security Groups
 
-![alt text](<Screenshot 2026-03-13 164903.png>)
+![EC2 Instance Security Groups](<./ss/ec2-instance-sg.png>)
 
-![alt text](<Screenshot 2026-03-13 154059-2.png>)
-![alt text](<Screenshot 2026-03-13 193918.png>)
+EC2 Instance Volumes
 
+![EC2 Instance Volumes](<./ss/ec2-instance-volume.png>)
 
-Tools used
+EC2 Instances After Terraform Initialized 
 
+![EC2 Instances After Terraform Initialized ](<./ss/ec2-instances-after-terraform.png>)
 
+EC2 Instance IP on Browser 
 
-Explanation of workflow
+![EC2 Instance IP on Browser ](<./ss/ec2-instance-ip-on-browser.png>)
+
+Node App Running on Browser via Instance IP 
+
+![Node App Running on Browser](<./ss/node-app-ec2-instance-ip.png>)
+
+4️⃣ Terraform Destroy Completion
+
+![Terraform Destroy Completion](<./ss/terraform-destroy.png>)
 
 
