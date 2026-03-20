@@ -1,3 +1,4 @@
+![Terraform1](./ss/terraform1.png)
 
 # Terraform Infrastructure
 
@@ -6,6 +7,8 @@
 This project demonstrates how to provision cloud infrastructure using Infrastructure as Code (IaC).
 
 The infrastructure is created on AWS using Terraform and automatically installs a web server on an EC2 instance.
+
+![Terraform2](./ss/terraform2.png)
 
 # Setup instructions
 
