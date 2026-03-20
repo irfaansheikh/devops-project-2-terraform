@@ -137,23 +137,13 @@ Terraform Validate
 
 1️⃣ terraform plan output
 
-![terraform plan1](<./ss/terraform-plan1.png>)
-
-![terraform plan2](<./ss/terraform-plan2.png>)
-
 ![terraform plan3](<./ss/terraform-plan3.png>)
 
 2️⃣ Terraform Apply Success
 
 ![Terraform Apply](<./ss/terraform-apply.png>)
 
-
-
 3️⃣ EC2 instance running
-
-Resources Dashboard
-
-![Resources Dashboard](<./ss/resources-dashboard.png>)
 
 EC2 Instances
 
@@ -162,18 +152,10 @@ EC2 Instances
 EC2 Instance Security Groups
 
 ![EC2 Instance Security Groups](<./ss/ec2-instance-sg.png>)
-
+ 
 EC2 Instance Volumes
 
 ![EC2 Instance Volumes](<./ss/ec2-instance-volume.png>)
-
-EC2 Instances After Terraform Initialized 
-
-![EC2 Instances After Terraform Initialized ](<./ss/ec2-instances-after-terraform.png>)
-
-EC2 Instance IP on Browser 
-
-![EC2 Instance IP on Browser ](<./ss/ec2-instance-ip-on-browser.png>)
 
 Node App Running on Browser via Instance IP 
 
@@ -182,5 +164,3 @@ Node App Running on Browser via Instance IP
 4️⃣ Terraform Destroy Completion
 
 ![Terraform Destroy Completion](<./ss/terraform-destroy.png>)
-
-
